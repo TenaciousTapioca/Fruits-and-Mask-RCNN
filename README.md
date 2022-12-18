@@ -34,7 +34,7 @@ Since the Python implementation of Mask R-CNN by [[2]](#2) does not support Tens
 
 ## Environment and Requirements
 - Windows 10 with Anaconda and the Spyder IDE was used.
-  - To copy the exact environment that was used, copy the following into Anaconda Prompt:
+  - To copy the exact environment that was used, copy the following into Anaconda Prompt:<br>
     ```conda create --name tf_2_3_0 --file requirements.txt```
 - Most notable version requirements:
     - Python 3.8.15
