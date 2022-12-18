@@ -8,28 +8,28 @@ Since the Python implementation of Mask R-CNN by [[2]](#2) does not support Tens
 ## Dataset Annotation
 - Since the dataset of fruits was originally designed for object detection with a bounding box, we manually annotated each fruit with a polygon outline using [makesense.ai](https://www.makesense.ai/). This dataset was split into 240 images for training and 60 images for validation/testing.
 <p align="center">
-    <img src="images/orange_annot.png" width="70%" height="70%">
+    <img src="readme_images/orange_annot.png" width="70%" height="70%">
     <br>Polygon outline of an orange with its associated label<br>
-    <br><img src="images/orange_json.png">
+    <br><img src="readme_images/orange_json.png">
     <br>The orange's corresponding cartesian coordinates<br>
-    <br><img src="images/orange_real_mask.png">
+    <br><img src="readme_images/orange_real_mask.png">
     <br>The orange's corresponding mask
 </p>
 
 ## Results
 - Upon providing a target image as a JPG to predict on, using the latest training weights after ten epochs, the model attempts to classify the label of each fruit it was trained on while also classifying their corresponding masks.
 <p align="center">
-    <img src="images/two_apples.png" width="50%" height="50%">
+    <img src="readme_images/two_apples.png" width="50%" height="50%">
     <br>Predictions on two apples<br>
-    <br><img src="images/apple_banana.png" width="60%" height="60%">
+    <br><img src="readme_images/apple_banana.png" width="60%" height="60%">
     <br>Predictions on four apples and a banana<br>
-    <br><img src="images/three_oranges.png" width="60%" height="60%">
+    <br><img src="readme_images/three_oranges.png" width="60%" height="60%">
     <br>Predictions on three oranges<br>
 </p>
 
 ## Workflow
 <p align="center">
-    <img src="images/workflow.png" width="90%" height="90%">
+    <img src="readme_images/workflow.png" width="90%" height="90%">
 </p>
 
 ## Environment and Requirements
@@ -44,18 +44,16 @@ Since the Python implementation of Mask R-CNN by [[2]](#2) does not support Tens
 `runfile('directory/to/fruits_MaskRCNN/train.py')`  
 - To infer/predict upon a target image (change the directory and argument as needed):<br>
 `runfile('directory/to/fruits_MaskRCNN/inference.py', args='fruits2.jpg')` 
-* Note: If an error like "operands could not be broadcast together with shapes (1024,1024,4) (3,)" occurs and the target image is in PNG, you may need to convert it into JPG.
+* Note(1): To keep the repository size small, the fruits training weights after 10 epochs and the pretrained COCO weights are not included. The latter will be automatically downloaded through mrcnn/utils.py upon the first attempt to train the model.
+* Note(2): If an error like "operands could not be broadcast together with shapes (1024,1024,4) (3,)" occurs during inferencing and the target image is in PNG, you may need to convert it into JPG.
 
 ## References
 <a id="1">[1]</a> 
-K. He, G. Gkioxari, P. Doll, and R. B. Girshick, "Mask R-CNN," in *arXiv*, 2017.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doi:10.48550/arXiv.1703.06870 [Online]. Available: https://arxiv.org/abs/1703.06870<br>
+K. He, G. Gkioxari, P. Doll, and R. B. Girshick, "Mask R-CNN," in *arXiv*, 2017. doi:10.48550/arXiv.1703.06870 [Online]. Available: https://arxiv.org/abs/1703.06870<br><br>
 <a id="2">[2]</a> 
-W. Abdulla, "Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow," in 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Github repository*, 2017. Available: 
-https://github.com/matterport/Mask_RCNN<br>
+W. Abdulla, "Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow," in *Github repository*, 2017. Available: 
+https://github.com/matterport/Mask_RCNN<br><br>
 <a id="3">[3]</a>
-M. Buyukkinac, "Fruits Images for Object Detection," in *Kaggle*, 2018. Available: 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.kaggle.com/datasets/mbkinaci/fruit-images-for-object-detection<br>
+M. Buyukkinac, "Fruits Images for Object Detection," in *Kaggle*, 2018. Available: https://www.kaggle.com/datasets/mbkinaci/fruit-images-for-object-detection<br><br>
 <a id="4">[4]</a> 
 A, Kelly. "Mask_RCNN," in *Github repository*, 2020. Available: https://github.com/akTwelve/Mask_RCNN<br>
