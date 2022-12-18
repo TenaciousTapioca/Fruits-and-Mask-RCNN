@@ -40,9 +40,10 @@ Since the Python implementation of Mask R-CNN by [[2]](#2) does not support Tens
     - Python 3.8.15
     - Tensorflow: 2.3.0
 ## Usage
-- To train the model on the fruits dataset (change the directory as needed):<br>
+- Inside the Spyder Console:
+    - To train the model on the fruits dataset (change the directory as needed):<br>
 `runfile('directory/to/fruits_MaskRCNN/train.py')`  
-- To infer/predict upon a target image (change the directory and argument as needed):<br>
+    - To infer/predict upon a target image (change the directory and argument as needed):<br>
 `runfile('directory/to/fruits_MaskRCNN/inference.py', args='fruits2.jpg')` 
 * Note(1): To keep the repository size small, the fruits training weights after 10 epochs and the pretrained COCO weights are not included. The latter will be automatically downloaded through mrcnn/utils.py upon the first attempt to train the model.
 * Note(2): If an error like "operands could not be broadcast together with shapes (1024,1024,4) (3,)" occurs during inferencing and the target image has a PNG file extension, you may need to convert it into JPG.
